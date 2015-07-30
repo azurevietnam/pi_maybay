@@ -4,6 +4,9 @@
  * @author vdbkpro
  * @copyright 2013
  */
+
+date_default_timezone_set('Asia/Bangkok');
+
 define("SITE_NAME", "http://localhost:88/pi_maybay");
 define("DIR", dirname(__FILE__));
 define('SERVER','localhost');

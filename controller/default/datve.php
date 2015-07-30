@@ -113,7 +113,7 @@ if(isset($_POST['thanh-toan-tainha']) || isset($_POST['thanh-toan-vanphong']) ||
                 "TicketType": "'.$val->TicketType.'",';
                 if($dataarray['RoundTrip'] == "true") {
                     $data_post_depart .= '
-                    "ReturnDate" : "'.$dataarray['ReturntDate'].'",
+                    "ReturnDate" : "'.$dataarray['ReturnDate'].'",
                     "ReturnFlightNumber" : "'.$_GET['outbound'].'",'
                     .($val->Airline == "VietnamAirlines"?'"ReturnFareBasis" : "'.$val->FareBasis.'",':'').
                     '"ReturnTicketPrice" : 900000,
@@ -202,7 +202,7 @@ if(isset($_POST['thanh-toan-tainha']) || isset($_POST['thanh-toan-vanphong']) ||
             $message .= "<p>Yêu cầu đặt vé của quý khách đã được xử lý trên hệ thống của chúng tôi.</p>";
             $message .= "<p>Xin chào quý khách: <span style='color: #4010ff'>".$_POST['hoten_lienhe']."</span></p>";
             $message .= "<p>Quý khách vừa đặt thành công chuyến bay: <span style='color: #4010ff'>".$dataarray['TFromPlace']. "->" .$dataarray['TToPlace']. "</span></p>";
-            $message .= "<p>Mã chuyến bay:  <span style='color: #4010ff'>".$data->Id."</span></p>";
+//            $message .= "<p>Mã chuyến bay:  <span style='color: #4010ff'>".$data->Id."</span></p>";
 
 //            if(isset($_POST['thanh-toan-tainha'])) {
 //                $message .= "<p>Hình thức thanh toán:  <span style='color: #4010ff'>Thanh toán tại nhà</span></p>";
@@ -225,7 +225,7 @@ if(isset($_POST['thanh-toan-tainha']) || isset($_POST['thanh-toan-vanphong']) ||
 
             if(isset($_POST['onepay-noidia'])) {
 				// code by nhan say
-				require_once DIR.'/common/one_pay/inland.php';
+				require_once DIR.'/common/one_pay/inland/inland.php';
 
 				// lấy các tham số để redirect sang one pay
 				$one_pay_array = get_one_pay_inland( $_POST );
@@ -235,7 +235,7 @@ if(isset($_POST['thanh-toan-tainha']) || isset($_POST['thanh-toan-vanphong']) ||
 
             if(isset($_POST['onepay-quocte'])) {
 				// code by nhan say
-				require_once DIR.'/common/one_pay/inter.php';
+				require_once DIR.'/common/one_pay/inter/inter.php';
 
 				// lấy các tham số để redirect sang one pay
 				$one_pay_array = get_one_pay_inter( $_POST );
