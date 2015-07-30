@@ -6,6 +6,7 @@
  */
 
 date_default_timezone_set('Asia/Bangkok');
+define('ONE_PAY_KEY', 'A3EFDFABA8653DF2342E8DAC29B51AF0');
 
 define("SITE_NAME", "http://localhost:88/pi_maybay");
 define("DIR", dirname(__FILE__));

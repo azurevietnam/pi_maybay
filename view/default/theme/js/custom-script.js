@@ -385,9 +385,9 @@ function search_noidia($url,$datapost,$sources,$type,$sortby,$ele){
 
 				$(".list-result>table>tbody>tr:first-child").addClass("selected");
 				$(".list-result>table>tbody>tr:first-child>.check-ve>input").prop("checked", true);
+
                 //Send fixed
                 var window_height = $(window).height();
-                var send_top = $(".send input").offset().top;
 				var form_bottom = $(".form-ve").offset().top + $(".form-ve").height();
 
                 if (form_bottom > window_height) {
@@ -397,15 +397,11 @@ function search_noidia($url,$datapost,$sources,$type,$sortby,$ele){
 				$(window).scroll(function() {
 
 					var scroll_top = $(this).scrollTop();
-					//var window_height = $(window).height();
-					//var send_top = $(".send input").offset().top;
 
 					if ( scroll_top + window_height < form_bottom ) {
 						$(".send input").addClass("send-fixed");
-						console.log('be hon');
 					}
 					else {
-						console.log('lon hon');
 						$(".send input").removeClass("send-fixed");
 					}
 				});
