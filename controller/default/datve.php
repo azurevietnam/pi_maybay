@@ -225,20 +225,26 @@ if(isset($_POST['thanh-toan-tainha']) || isset($_POST['thanh-toan-vanphong']) ||
 
             if(isset($_POST['onepay-noidia'])) {
 				// code by nhan say
-				require_once DIR.'/common/one_pay/inland/inland.php';
+				require_once DIR.'/common/one_pay/inland.php';
+
+				// controller sẽ nhận kết quả trả về của one pay để xử lý
+				$return_url = SITE_NAME.'/controller/default/inland_dr.php';
 
 				// lấy các tham số để redirect sang one pay
-				$one_pay_array = get_one_pay_inland( $_POST );
+				$one_pay_array = get_one_pay_inland( $_POST, $return_url );
 				// mã hóa và redirect
 				redirect_one_pay_inland( $one_pay_array );
             }
 
             if(isset($_POST['onepay-quocte'])) {
 				// code by nhan say
-				require_once DIR.'/common/one_pay/inter/inter.php';
+				require_once DIR.'/common/one_pay/inter.php';
+
+				// controller sẽ nhận kết quả trả về của one pay để xử lý
+				$return_url = SITE_NAME.'/controller/default/inter_dr.php';
 
 				// lấy các tham số để redirect sang one pay
-				$one_pay_array = get_one_pay_inter( $_POST );
+				$one_pay_array = get_one_pay_inter( $_POST, $return_url );
 				// mã hóa và redirect
 				redirect_one_pay_inter( $one_pay_array );
             }

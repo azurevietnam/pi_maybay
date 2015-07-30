@@ -8,7 +8,7 @@
 
 require_once 'one_pay_config.php';
 
-function get_one_pay_inland( $post_array = array() ) {
+function get_one_pay_inland( $post_array = array(), $return_url ) {
 	$one_pay_array          = array();
 	$one_pay_array['Title'] = 'VPC 3-Party';
 	// URL cổng thanh toán - Virtual Payment Client
@@ -24,7 +24,7 @@ function get_one_pay_inland( $post_array = array() ) {
 	// Số tiền cần thanh toán,Đã được nhân với 100. VD: 100=1VND
 	$one_pay_array['vpc_Amount'] = 100;
 	// Url nhận kết quả trả về sau khi giao dịch hoàn thành
-	$one_pay_array['vpc_ReturnURL'] = SITE_NAME.'/common/one_pay/inland/dr.php';
+	$one_pay_array['vpc_ReturnURL'] = $return_url;
 	// Phiên bản modul (cố định)
 	$one_pay_array['vpc_Version'] = 2;
 	// Loại request (cố định)
