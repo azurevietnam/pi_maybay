@@ -40,7 +40,7 @@
                         <p>{nguoilon_td}</p>
                         <div>
                             <a class="sub" href="#">-</a>
-                            <select class="nguoi-lon" id="nguoi-lon" name="adult">
+                            <select class="nguoi-lon" id="nguoi-lon-select" name="adult">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -232,8 +232,8 @@
 
     </table>
 </div>
-    <!--<form class="form" action="{SITE-NAME}/confirmation/" method="post">-->
-    <form class="form" action="" method="post">
+<!--<form class="form" action="{SITE-NAME}/confirmation/" method="post">-->
+<form class="form" action="" method="post">
 <div class="tieude_datve_tt">
     <div class="tieude_datve_tt_icon2">
 
@@ -284,7 +284,7 @@
         <div class="nguoilon_thongtin_tt">
             <div class="col-md-2">
                 <p class="chuyenbay_datve_tt3">Qúy danh</p>
-                <select class="quydanh_1_tt" name="quydanh_lienhe" >
+                <select class="quydanh_1_tt" name="quydanh_lienhe">
                     <option value="1">Ông</option>
                     <option value="2">Bà</option>
                     <option value="1">Anh</option>
@@ -293,12 +293,12 @@
             </div>
             <div class="col-md-4" style="padding-left: 0px">
                 <p class="chuyenbay_datve_tt3">Họ và tên <span class="batcuoc_tt">(*)</span></p>
-                <input type="text" class="input_hoten_tt" name="hoten_lienhe" />
+                <input type="text" class="input_hoten_tt" name="hoten_lienhe" required />
             </div>
             <div class="col-md-2" style="padding-left: 0px">
-                <p class="chuyenbay_datve_tt3">Ngày sinh</p>
-                <select class="quydanh_1_tt" name="ngaysinh_lienhe" >
-                    <option value="">Ngày</option>
+                <p class="chuyenbay_datve_tt3">Ngày sinh <span class="batcuoc_tt">(*)</span></p>
+                <select class="quydanh_1_tt" name="ngaysinh_lienhe" required>
+                    <option value="0">Ngày</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -331,11 +331,12 @@
                     <option value="30">30</option>
                     <option value="31">31</option>
                 </select>
+				<div class="quydanh_1_tt_error" style="color: #ff2400"></div>
             </div>
             <div class="col-md-2" style="padding-left: 0px">
                 <p class="chuyenbay_datve_tt3">&nbsp;</p>
-                <select class="quydanh_1_tt" name="thang_lienhe" >
-                    <option value="">Tháng</option>
+                <select class="quydanh_1_tt" name="thang_lienhe" required>
+                    <option value="0">Tháng</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -352,8 +353,8 @@
             </div>
             <div class="col-md-2" style="padding-left: 0px">
                 <p class="chuyenbay_datve_tt3">&nbsp;</p>
-                <select class="quydanh_1_tt" name="nam_lienhe" >
-                    <option value="">Năm</option>
+                <select class="quydanh_1_tt" name="nam_lienhe" required>
+                    <option value="0">Năm</option>
                     <option value="1950">1950</option>
                     <option value="1951">1951</option>
                     <option value="1952">1952</option>
@@ -432,11 +433,11 @@
         <div class="nguoilon_thongtin_tt">
             <div class="col-md-4" >
                 <p class="chuyenbay_datve_tt3">Số điện thoại di động <span class="batcuoc_tt">(*)</span></p>
-                <input type="number" class="input_hoten_tt" name="sdt_lienhe"  />
+                <input type="number" class="input_hoten_tt" name="sdt_lienhe"  required />
             </div>
             <div class="col-md-8" style="padding-left: 0px">
                 <p class="chuyenbay_datve_tt3">Email <span class="batcuoc_tt">(*)</span></p>
-                <input type="email" class="input_hoten_tt" name="email_lienhe" >
+                <input type="email" class="input_hoten_tt" name="email_lienhe" required>
             </div>
         </div>
 
@@ -508,21 +509,21 @@
 <div class="noidung_tt_datve" style="margin-bottom: 20px">
     <ul class="nav nav-tabs  tab_datve" role="tablist">
         <li style="padding-left: 0px" role="presentation" class="active">
-            <a href="#home" aria-controls="home" role="tab" data-toggle="tab" id="America">THANH TOÁN QUA CÁC CỔNG THANH TOÁN ĐIỆN TỬ</a>
-        </li>
-        <li  role="presentation">
-            <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">THANH TOÁN BẰNG TIỀN MẶT TẠI VP TOURCOACH</a>
+            <a href="#tab-onepay" aria-controls="tab-onepay" role="tab" data-toggle="tab">THANH TOÁN QUA CÁC CỔNG THANH TOÁN ĐIỆN TỬ</a>
         </li>
         <li role="presentation">
-            <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">THANH TOÁN TẠI NHÀ (+30.000VNĐ)</a>
+            <a href="#tab-office" aria-controls="tab-office" role="tab" data-toggle="tab">THANH TOÁN BẰNG TIỀN MẶT TẠI VP TOURCOACH</a>
+        </li>
+        <li role="presentation">
+            <a href="#tab-home" aria-controls="tab-home" role="tab" data-toggle="tab">THANH TOÁN TẠI NHÀ (+30.000VNĐ)</a>
         </li>
         <li style="padding-right: 0px" role="presentation">
-            <a href="#settings2" aria-controls="settings2" role="tab" data-toggle="tab">THANH TOÁN CHUYỂN KHOẢN</a></li>
+            <a href="#tab-bank" aria-controls="tab-bank" role="tab" data-toggle="tab">THANH TOÁN CHUYỂN KHOẢN</a></li>
     </ul>
 
     <!-- Tab panes -->
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active tab_noidung_tt" id="home">
+        <div role="tabpanel" class="tab-pane active tab_noidung_tt" id="tab-onepay">
             <p style="margin-bottom: 20px">Qúy khách có thể thanh toán ngay (trực tuyến) thông qua cổng OnePay, Bảo Kim, Ngân Lượng, 123Pay, SenPay</p>
             <div class="col-md-6" style="padding-left: 0px">
                 <p class="chuyenbay_datve_tt3">THẺ GHI NỢ NỘI ĐỊA</p>
@@ -530,7 +531,7 @@
                     <img src="{SITE-NAME}//view/default/theme/images/thanh-toan-noi-dia.jpg" alt="" />
                 </div>
                 <div style="text-align: center; margin-top: 20px;">
-                    <input name="onepay-noidia" type="submit" class="nut_xanh_tt" value="Chọn hình thức thanh toán này">
+                    <input id="submit-onepay-noidia" name="onepay-noidia" type="submit" class="nut_xanh_tt" value="Chọn hình thức thanh toán này">
                 </div>
             </div>
             <div class="col-md-6" style="border-left: 1px solid #e6e6e6;">
@@ -543,7 +544,7 @@
                 </div>
             </div>
         </div>
-        <div role="tabpanel" class="tab-pane tab_noidung_tt" id="profile" id="Europe">
+        <div role="tabpanel" class="tab-pane tab_noidung_tt" id="tab-office">
             <p style="margin-bottom: 20px">Sau khi đặt hàng thành công, Quý khách vui lòng qua văn phòng Tourcoach để thanh toán và nhận vé. Chấp nhận tiền mặt hoặc cả thẻ tại văn phòng.</p>
             <div class="col-md-12" style="padding-left: 0px">
                 <p class="chuyenbay_datve_tt3">CÔNG TY TNHH DỊCH VỤ - VẬN TẢI VÀ LỮ HÀNH QUỐC TÊ COACH</p>
@@ -554,7 +555,7 @@
             </div>
 
         </div>
-        <div role="tabpanel" class="tab-pane tab_noidung_tt" id="settings" id="Asia">
+        <div role="tabpanel" class="tab-pane tab_noidung_tt" id="tab-home">
             <p style="margin-bottom: 20px">Với hình thức này, quý khách sẽ mất phí giao vé là 30,000 vnđ. Quý khách vui lòng điền đầy đủ thông tin địa chỉ để nhân viên Tourcoach Giao é và thu tiền</p>
             <div class="col-md-12" style="padding-left: 0px">
                 <p class="batcuoc_tt">Lưu ý: Hình thức thanh toán này chỉ áp dụng cho các địa chỉ tại khu vực nội thành Hà Nội</p>
@@ -562,19 +563,19 @@
                     <div class="nguoilon_thongtin_tt" style="width: 100%">
                         <div class="col-md-6" style="padding-left: 0px; padding-right: 5px" >
                             <p class="chuyenbay_datve_tt3">Họ và tên<span class="batcuoc_tt">(*)</span></p>
-                            <input type="text" class="input_hoten_tt" name="hoten-tainha" />
+                            <input type="text" class="input_hoten_tt" name="hoten-tainha" required disabled />
                         </div>
                         <div class="col-md-6" style="padding-right: 0px; padding-left: 5px">
                             <p class="chuyenbay_datve_tt3">Số điện thoại <span class="batcuoc_tt">(*)</span></p>
-                            <input type="text" class="input_hoten_tt" name="sdt-tainha" />
+                            <input type="text" class="input_hoten_tt" name="sdt-tainha" required disabled />
                         </div>
                         <div class="col-md-6" style="padding-left: 0px; margin-top: 10px; padding-right: 5px" >
                             <p class="chuyenbay_datve_tt3">Địa chỉ<span class="batcuoc_tt">(*)</span></p>
-                            <input type="text" class="input_hoten_tt" name="diachi-tainha" />
+                            <input type="text" class="input_hoten_tt" name="diachi-tainha" required disabled />
                         </div>
                         <div class="col-md-6" style="padding-right: 0px; margin-top: 10px;padding-left: 5px ">
                             <p class="chuyenbay_datve_tt3">Thành phố <span class="batcuoc_tt">(*)</span></p>
-                            <input type="text" class="input_hoten_tt" name="thanhpho-tainha" />
+                            <input type="text" class="input_hoten_tt" name="thanhpho-tainha" required disabled />
                         </div>
                         <div class="col-md-12" style="text-align: right; padding-top: 20px; padding-right: 0px">
                             <input name="thanh-toan-tainha" type="submit" class="nut_xanh_tt" value="Chọn hình thức thanh toán này">
@@ -583,7 +584,7 @@
                 </div>
             </div>
         </div>
-        <div role="tabpanel" class="tab-pane tab_noidung_tt" id="settings2" id="Asia2">
+        <div role="tabpanel" class="tab-pane tab_noidung_tt" id="tab-bank">
             <p style="margin-bottom: 20px">Quý khách có thể thanh toán cho chúng tôi bằng cách chuyển khoản trực tiếp tại ngân hàng qua thẻ atm hoặc qua interner banhking.</p>
             <p >Vui lòng chọn tài khoản ngân hàng mà Quý khách có thể chuyển khoản một cách tiện lợi nhất</p>
             <p  class="chuyenbay_datve_tt2">Lưu ý khi chuyển khoản:</p>

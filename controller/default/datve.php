@@ -222,20 +222,26 @@ if(isset($_POST['thanh-toan-tainha']) || isset($_POST['thanh-toan-vanphong']) ||
 //                $link=SITE_NAME.'/confirmation/?orderid='.$data->Id.'&method=3';
 //                echo "<script>window.location.href='$link'</script>";
 //            }
-//            if(isset($_POST['onepay-noidia'])) {
-//                $message .= "<p>Hình thức thanh toán:  <span style='color: #4010ff'>Thanh toán OnePay Nội địa</span></p>";
-//                //SendMail($email, $message, $subject);
-////                $link=SITE_NAME.'/confirmation/?orderid='.$data->Id.'&method=4';
-////                echo "<script>window.location.href='$link'</script>";
-//                var_dump($data_post_depart);
-//            }
-//            if(isset($_POST['onepay-quocte'])) {
-//                $message .= "<p>Hình thức thanh toán:  <span style='color: #4010ff'>Thanh toán OnePay Quốc tế</span></p>";
-//                //SendMail($email, $message, $subject);
-////                $link=SITE_NAME.'/confirmation/?orderid='.$data->Id.'&method=5';
-////                echo "<script>window.location.href='$link'</script>";
-//                var_dump($data_post_depart);
-//            }
+
+            if(isset($_POST['onepay-noidia'])) {
+				// code by nhan say
+				require_once DIR.'/common/one_pay/inland.php';
+
+				// lấy các tham số để redirect sang one pay
+				$one_pay_array = get_one_pay_inland( $_POST );
+				// mã hóa và redirect
+				redirect_one_pay_inland( $one_pay_array );
+            }
+
+            if(isset($_POST['onepay-quocte'])) {
+				// code by nhan say
+				require_once DIR.'/common/one_pay/inter.php';
+
+				// lấy các tham số để redirect sang one pay
+				$one_pay_array = get_one_pay_inter( $_POST );
+				// mã hóa và redirect
+				redirect_one_pay_inter( $one_pay_array );
+            }
         }
     }
 }

@@ -234,12 +234,12 @@ function show_datve($data = array())
                 </select>
             </div>
             <div class="col-md-4" style="padding-left: 0px">
-                <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Họ" name="ho_nl_'.$i.'" />
+                <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Họ" name="ho_nl_'.$i.'" required />
                 <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Tên lót" name="tenlot_nl_'.$i.'" />
-                <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Tên" name="ten_nl_'.$i.'" />
+                <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Tên" name="ten_nl_'.$i.'" required />
             </div>
             <div class="col-md-2" style="padding-left: 0px">
-                <select class="quydanh_1_tt" name="ngaysinh_nl_'.$i.'" >
+                <select class="quydanh_1_tt" name="ngaysinh_nl_'.$i.'" required>
                     <option value="">Ngày</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -275,7 +275,7 @@ function show_datve($data = array())
                 </select>
             </div>
             <div class="col-md-2" style="padding-left: 0px">
-                <select class="quydanh_1_tt" name="thang_nl_'.$i.'" >
+                <select class="quydanh_1_tt" name="thang_nl_'.$i.'" required>
                     <option value="">Tháng</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -292,7 +292,7 @@ function show_datve($data = array())
                 </select>
             </div>
             <div class="col-md-2" style="padding-left: 0px">
-                <select class="quydanh_1_tt" name="nam_nl_'.$i.'" >
+                <select class="quydanh_1_tt" name="nam_nl_'.$i.'" required>
                     <option value="">Năm</option>
                     <option value="1950">1950</option>
                     <option value="1951">1951</option>
@@ -376,19 +376,19 @@ function show_datve($data = array())
         </div>
         <div class="nguoilon_thongtin_tt">
             <div class="col-md-2">
-                <select class="quydanh_1_tt" name="quydanh_te_'.$i.'" >
+                <select class="quydanh_1_tt" name="quydanh_te_'.$i.'" required>
                     <option value="MSTR">Trẻ em trai</option>
                     <option value="MISS">Trẻ em gái</option>
                 </select>
             </div>
             <div class="col-md-4" style="padding-left: 0px">
-                <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Họ" name="ho_te_'.$i.'" />
+                <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Họ" name="ho_te_'.$i.'" required />
                 <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Tên lót" name="tenlot_te_'.$i.'" />
-                <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Tên" name="ten_te_'.$i.'" />
+                <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Tên" name="ten_te_'.$i.'" required />
             </div>
             <div class="col-md-2" style="padding-left: 0px">
-                <select class="quydanh_1_tt" name="ngaysinh_te_'.$i.'" >
-                    <option value="">Ngày</option>
+                <select class="quydanh_1_tt" name="ngaysinh_te_'.$i.'" required >
+                    <option value="0">Ngày</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -423,8 +423,8 @@ function show_datve($data = array())
                 </select>
             </div>
             <div class="col-md-2" style="padding-left: 0px">
-                <select class="quydanh_1_tt" name="thang_te_'.$i.'" >
-                    <option value="">Tháng</option>
+                <select class="quydanh_1_tt" name="thang_te_'.$i.'" required >
+                    <option value="0">Tháng</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -440,8 +440,8 @@ function show_datve($data = array())
                 </select>
             </div>
             <div class="col-md-2" style="padding-left: 0px">
-                <select class="quydanh_1_tt" name="nam_te_'.$i.'" >
-                    <option value="">Năm</option>
+                <select class="quydanh_1_tt" name="nam_te_'.$i.'" required >
+                    <option value="0">Năm</option>
                     <option value="2003">2003</option>
                     <option value="2004">2004</option>
                     <option value="2005">2005</option>
@@ -476,12 +476,12 @@ function show_datve($data = array())
                 </select>
             </div>
             <div class="col-md-4" style="padding-left: 0px">
-                <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Họ" name="ho_ss_'.$i.'" />
+                <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Họ" name="ho_ss_'.$i.'" required />
                 <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Tên lót" name="tenlot_ss_'.$i.'" />
-                <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Tên" name="ten_ss_'.$i.'" />
+                <input type="text" class="input_hoten_tt ho_ten_full" placeholder="Tên" name="ten_ss_'.$i.'" required />
             </div>
             <div class="col-md-2" style="padding-left: 0px">
-                <select class="quydanh_1_tt" name="ngaysinh_ss_'.$i.'" >
+                <select class="quydanh_1_tt" name="ngaysinh_ss_'.$i.'" required>
                     <option value="">Ngày</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -517,7 +517,7 @@ function show_datve($data = array())
                 </select>
             </div>
             <div class="col-md-2" style="padding-left: 0px">
-                <select class="quydanh_1_tt" name="thang_ss_'.$i.'" >
+                <select class="quydanh_1_tt" name="thang_ss_'.$i.'" required>
                     <option value="">Tháng</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -534,7 +534,7 @@ function show_datve($data = array())
                 </select>
             </div>
             <div class="col-md-2" style="padding-left: 0px">
-                <select class="quydanh_1_tt" name="nam_ss_'.$i.'" >
+                <select class="quydanh_1_tt" name="nam_ss_'.$i.'" required>
                     <option value="">Năm</option>
                     <option value="2013">2013</option>
                     <option value="2014">2014</option>

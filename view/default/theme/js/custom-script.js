@@ -383,21 +383,32 @@ function search_noidia($url,$datapost,$sources,$type,$sortby,$ele){
 
 				$('.flight-info-detail').hide();
 
+				$(".list-result>table>tbody>tr:first-child").addClass("selected");
+				$(".list-result>table>tbody>tr:first-child>.check-ve>input").prop("checked", true);
                 //Send fixed
                 var window_height = $(window).height();
                 var send_top = $(".send input").offset().top;
-                if (send_top > window_height) {
+				var form_bottom = $(".form-ve").offset().top + $(".form-ve").height();
+
+                if (form_bottom > window_height) {
                     $(".send input").addClass("send-fixed");
-                    $(window).scroll(function() {
-                        var scroll_top = $(this).scrollTop();
-                        if ( scroll_top + window_height < send_top ) {
-                            $(".send input").addClass("send-fixed");
-                        }
-                        else {
-                            $(".send input").removeClass("send-fixed");
-                        }
-                    });
                 }
+
+				$(window).scroll(function() {
+
+					var scroll_top = $(this).scrollTop();
+					//var window_height = $(window).height();
+					//var send_top = $(".send input").offset().top;
+
+					if ( scroll_top + window_height < form_bottom ) {
+						$(".send input").addClass("send-fixed");
+						console.log('be hon');
+					}
+					else {
+						console.log('lon hon');
+						$(".send input").removeClass("send-fixed");
+					}
+				});
 
 				jQuery(document).ready(function($){
 					var of = $('.bottom-offset');
@@ -519,3 +530,27 @@ function get_flight($datapost,$outbound,$inbound,$ele) {
         }
     });
 }
+
+// custom code by nhan say
+$(document).ready(function() {
+
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		var tab_home_class = $("#tab-home").attr("class");
+		if (tab_home_class.indexOf("active") == -1) {
+			$("#tab-home input[type='text']").attr("disabled", "disabled");
+		}
+		else {
+			$("#tab-home input[type='text']").removeAttr("disabled");
+		}
+	})
+
+	//$(".tab_datve>li").click(function() {
+	//	var tab_home_class = $("#tab-home").attr("class");alert(tab_home_class);
+	//	if (tab_home_class.indexOf("active") == -1) {
+	//		$("#tab-home input[type='text']").attr("disabled", "disabled");
+	//	}
+	//	else {
+	//		$("#tab-home input[type='text']").removeAttr("disabled");
+	//	}
+	//});
+});
